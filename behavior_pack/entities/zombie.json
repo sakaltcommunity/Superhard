@@ -1,0 +1,373 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:zombie",
+      "spawn_category": "monster",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "minecraft:look_to_start_drowned_transformation": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_underwater", "subject": "self", "operator": "==", "value": true
+            },
+            "event": "minecraft:start_transforming"
+          }
+        }
+      },
+      "minecraft:start_drowned_transformation": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_underwater", "subject": "self", "operator": "==", "value": false
+            },
+            "event": "minecraft:stop_transforming"
+          }
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 30,
+          "time_down_event": {
+            "event": "minecraft:convert_to_drowned"
+          }
+        }
+      },
+      "minecraft:convert_to_drowned": {
+        "minecraft:transformation": {
+          "into": "minecraft:drowned<minecraft:as_adult>",
+          "transformation_sound": "convert_to_drowned",
+          "drop_equipment": true,
+          "delay": {
+            "value": 15
+          }
+        },
+        "minecraft:is_shaking": {}
+      },
+      "minecraft:convert_to_baby_drowned": {
+        "minecraft:transformation": {
+          "into": "minecraft:drowned<minecraft:as_baby>",
+          "transformation_sound": "convert_to_drowned",
+          "drop_equipment": true,
+          "delay": {
+            "value": 15
+          }
+        },
+        "minecraft:is_shaking": {}
+      },
+      "minecraft:zombie_baby": {
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
+        },
+        "minecraft:is_baby": {},
+        "minecraft:scale": {
+          "value": 0.5
+        },
+        "minecraft:movement": {
+          "value": 0.35
+        }
+      },
+      "minecraft:zombie_adult": {
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+        },
+        "minecraft:movement": {
+          "value": 0.23
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": ["zombie"],
+          "seats": {
+            "position": [0.0, 1.1, -0.35],
+            "lock_rider_rotation": 0
+          }
+        }
+      },
+      "minecraft:zombie_jockey": {
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16,
+          "start_delay": 15,
+          "max_failed_attempts": 20
+        }
+      },
+      "minecraft:can_have_equipment": {
+        "minecraft:equipment": {
+          "table": "loot_tables/entities/zombie_equipment.json"
+        }
+      },
+      "minecraft:can_break_doors": {
+        "minecraft:annotation.break_door": {}
+      }
+    },
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:nameable": {},
+      "minecraft:type_family": {
+        "family": ["zombie", "undead", "monster", "mob"]
+      },
+      "minecraft:equip_item": {
+        "excluded_items": [
+          {
+            "item": "minecraft:banner:15"
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:burns_in_daylight": {},
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "can_pass_doors": true,
+        "can_walk": true,
+        "can_break_doors": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:health": {
+        "value": 24,  // HPを+4に設定
+        "max": 24
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": true
+      },
+      "minecraft:attack": {
+        "damage": 4  // ダメージを+1に設定
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/zombie.json"
+      },
+      "minecraft:shareables": {
+        "singular_pickup": true,
+        "items": [
+          {
+            "item": "minecraft:netherite_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:diamond_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "minecraft:iron_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+          },
+          {
+            "item": "minecraft:stone_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:golden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "minecraft:wooden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "minecraft:netherite_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:diamond_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "minecraft:iron_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+          },
+          {
+            "item": "minecraft:chainmail_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:golden_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "minecraft:leather_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "minecraft:turtle_helmet",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 6
+          },
+          {
+            "item": "minecraft:skull:0",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+          {
+            "item": "minecraft:skull:1",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+          {
+            "item": "minecraft:carved_pumpkin",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 7
+          },
+          {
+            "item": "minecraft:netherite_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:diamond_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "minecraft:iron_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+          },
+          {
+            "item": "minecraft:chainmail_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:golden_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "minecraft:leather_chestplate",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "minecraft:netherite_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:diamond_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "minecraft:iron_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+          },
+          {
+            "item": "minecraft:chainmail_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:golden_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "minecraft:leather_leggings",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          },
+          {
+            "item": "minecraft:netherite_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:diamond_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "minecraft:iron_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+          },
+          {
+            "item": "minecraft:chainmail_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:golden_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "minecraft:leather_boots",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          }
+        ]
+      }
+    }
+  }
+}

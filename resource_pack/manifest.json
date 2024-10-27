@@ -1,0 +1,24 @@
+{
+  "format_version": "2",
+  "header": {
+    "description": "Middle Weaponsアドオン",
+    "name": "Middle Weapons",
+    "uuid": "e9a8fbd1-b56a-4f72-b9b7-f0173e0e1950",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 20, 0]
+  },
+  "modules": [
+    {
+      "description": "Middle Weaponsデータ",
+      "type": "data",
+      "uuid": "cabc2e50-6c6e-4e7c-bd61-8a63cc46498b",
+      "version": [1, 0, 0]
+    },
+    {
+      "description": "Middle Weaponsリソース",
+      "type": "resource",
+      "uuid": "7ae081ef-fbde-42f5-9eb8-cc1cd3a2a2f8",
+      "version": [1, 0, 0]
+    }
+  ]
+}

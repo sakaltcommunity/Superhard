@@ -8,6 +8,10 @@
     },
     "components": {
       "minecraft:icon": "textures/items/scimitar",
+      "minecraft:attack_damage": 3,
+      "minecraft:durability": {
+        "max_durability": 250
+      },
       "minecraft:on_hit": {
         "run_command": {
           "command": "/function superhard:scimitar_attack",

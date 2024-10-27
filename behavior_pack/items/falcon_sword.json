@@ -1,0 +1,16 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "superhard:falcon_sword",
+      "category": "Weapons",
+      "is_experimental": false,
+      "icon": "textures/items/falcon_sword.png"
+    },
+    "components": {
+      "minecraft:icon": "textures/items/falcon_sword",
+      "minecraft:durability": 1990,
+      "minecraft:damage": 8.5,
+    }
+  }
+}

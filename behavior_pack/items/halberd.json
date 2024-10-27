@@ -2,7 +2,7 @@
   "format_version": "1.21.0",
   "minecraft:item": {
     "description": {
-      "identifier": "middle_weapons:halberd",
+      "identifier": "superhard:halberd",
       "category": "Weapons",
       "is_experimental": false,
       "icon": "textures/items/halberd.png"

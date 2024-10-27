@@ -7,6 +7,10 @@
       "is_experimental": false
     },
     "components": {
+      "minecraft:attack_damage": 0.5,
+      "minecraft:durability": {
+        "max_durability": 200
+      },
       "minecraft:icon": "textures/items/wooden_rapier",
       "minecraft:on_hit": {
         "run_command": {

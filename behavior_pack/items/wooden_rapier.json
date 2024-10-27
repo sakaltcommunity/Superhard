@@ -10,7 +10,7 @@
       "minecraft:icon": "textures/items/wooden_rapier",
       "minecraft:on_hit": {
         "run_command": {
-          "command": "/superhard:wooden_rapier_attack",
+          "command": "/function superhard:wooden_rapier_attack",
           "cooldown": 5
         }
       }

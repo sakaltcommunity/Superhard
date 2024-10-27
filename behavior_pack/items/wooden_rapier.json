@@ -1,0 +1,19 @@
+{
+  "format_version": "1.21",
+  "minecraft:item": {
+    "description": {
+      "identifier": "superhard:wooden_rapier",
+      "category": "Combat",
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:icon": "textures/items/wooden_rapier",
+      "minecraft:on_hit": {
+        "run_command": {
+          "command": "/superhard:wooden_rapier_attack",
+          "cooldown": 5
+        }
+      }
+    }
+  }
+}

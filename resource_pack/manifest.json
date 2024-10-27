@@ -5,7 +5,7 @@
     "name": "Middle Weapons",
     "uuid": "e9a8fbd1-b56a-4f72-b9b7-f0173e0e1950",
     "version": [1, 0, 0],
-    "min_engine_version": [1, 20, 0]
+    "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {

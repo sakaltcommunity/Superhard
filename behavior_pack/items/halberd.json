@@ -3,14 +3,14 @@
   "minecraft:item": {
     "description": {
       "identifier": "middle_weapons:halberd",
-      "category": "Misc",
+      "category": "Weapons",
       "is_experimental": false,
       "icon": "textures/items/halberd.png"
     },
     "components": {
       "minecraft:icon": "textures/items/halberd",
-      "minecraft:durability": 1000,
-      "minecraft:damage": 12,
+      "minecraft:durability": 994,
+      "minecraft:damage": 11,
       "minecraft:cooldown": 20
     }
   }

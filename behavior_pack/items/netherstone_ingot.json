@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "superhard:netherstone_ingot.json",
+      "category": "Item",
+      "is_experimental": false,
+      "icon": "textures/items/halberd.png"
+    },
+    "components": {
+      "minecraft:icon": "textures/items/netherstone_ingot",
+    }
+  }
+}

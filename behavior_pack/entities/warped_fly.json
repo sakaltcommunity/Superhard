@@ -1,0 +1,76 @@
+{
+  "format_version": "1.21",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "superhard:warped_fly",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["insect", "warped_fly"]
+      },
+      "minecraft:health": {
+        "value": 12
+      },
+      "minecraft:movement": {
+        "value": 0.35,
+        "can_fly": true
+      },
+      "minecraft:attack": {
+        "damage": 4.5
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "cause": "entity_attack",
+              "deals_damage": true,
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "event": "fly_attack_fire"
+            }
+          }
+        ]
+      },
+      "minecraft:burns_in_daylight": {}
+    },
+    "events": {
+      "fly_attack_fire": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": ["on_fire"]
+            }
+          }
+        ]
+      }
+    },
+    "component_groups": {
+      "on_fire": {
+        "minecraft:on_fire": {
+          "duration": 5
+        }
+      }
+    }
+  },
+  "minecraft:spawn_rules": {
+    "spawn": {
+      "conditions": [
+        {
+          "test": "match_tag",
+          "subject": "world",
+          "value": "warped_forest"
+        },
+        {
+          "test": "random",
+          "value": 360
+        }
+      ]
+    }
+  }
+}

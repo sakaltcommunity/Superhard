@@ -58,6 +58,11 @@
       }
     }
   },
+  "minecraft:experience_reward": {
+        "on_death": {
+          "range": [2, 5]
+        }
+      },
   "minecraft:spawn_rules": {
     "spawn": {
       "conditions": [

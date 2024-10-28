@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "superhard:xiphos_lv2"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "I",
+      "I",
+      "S"
+    ],
+    "key": {
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "I": {
+        "item": "superhard:netherstone_ingot"
+      }
+    },
+	"unlock": [
+      {
+        "item": "superhard:netherstone_ingot"
+      }
+    ],
+    "result": {
+      "item": "superhard:xiphos_lv2"
+    }
+  }
+}

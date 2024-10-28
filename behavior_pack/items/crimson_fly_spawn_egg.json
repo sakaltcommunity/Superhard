@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21",
+  "minecraft:item": {
+    "description": {
+      "identifier": "superhard:crimson_fly_spawn_egg",
+      "category": "Misc",
+      "is_experimental": false,
+      "name": "クリムゾンの蠅の卵",
+      "icon": "textures/items/crimson_fly_spawn_egg.png"
+    },
+    "components": {
+      "minecraft:icon": "textures/items/crimson_fly_spawn_egg.png",
+      "minecraft:spawn_egg": {
+        "entity": "superhard:crimson_fly",
+        "spawn_egg": "superhard:crimson_fly_egg",
+        "color": [255, 0, 0],
+        "spawn_entity": "superhard:crimson_fly"
+      }
+    }
+  }
+}

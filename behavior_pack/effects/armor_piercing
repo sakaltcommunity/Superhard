@@ -1,0 +1,17 @@
+{
+  "format_version": "1.21",
+  "minecraft:effect": {
+    "description": {
+      "identifier": "superhard:armor_piercing",
+      "is_hidden": false
+    },
+    "components": {
+      "minecraft:instant_health": {
+        "modifier": {
+          "operation": "multiply",
+          "value": 0
+        }
+      }
+    }
+  }
+}

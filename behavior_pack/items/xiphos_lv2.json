@@ -1,0 +1,17 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "superhard:xiphos_lv2",
+      "category": "Weapons",
+      "is_experimental": false,
+      "icon": "textures/items/xiphos_lv2.png"
+    },
+    "components": {
+      "minecraft:icon": "textures/items/xiphos_lv2",
+      "minecraft:durability": 1200,
+      "minecraft:damage": 6.5,
+      "minecraft:cooldown": 8
+    }
+  }
+}

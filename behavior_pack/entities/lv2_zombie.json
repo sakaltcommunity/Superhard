@@ -1,0 +1,52 @@
+{
+  "format_version": "1.21",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "superhard:lv2_zombie",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["zombie"]
+      },
+      "minecraft:health": {
+        "value": 26
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:attack": {
+        "damage": 3
+      },
+      "minecraft:experience_reward": {
+        "on_death": {
+          "range": [4, 6]
+        }
+      },
+      "minecraft:burns_in_daylight": {}
+    },
+    "minecraft:loot": {
+      "table": "loot_tables/entities/zombie.json"
+    },
+    "minecraft:spawn_rules": {
+      "spawn": {
+        "conditions": [
+          {
+            "test": "match_tag",
+            "subject": "world",
+            "value": "normal"
+          },
+          {
+            "test": "random",
+            "value": 360
+          }
+        ]
+      }
+    },
+    "minecraft:variant": {
+      "default": "minecraft:zombie"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "format_version": "1.21",
+  "minecraft:effect": {
+    "description": {
+      "identifier": "superhard:pest",
+      "is_hidden": false
+    },
+    "components": {
+      "minecraft:damage": {
+        "value": 1.2,
+        "interval": 10
+      }
+    }
+  }
+}
